@@ -4,7 +4,7 @@ from django.db.models.functions import Lower
 from preferences.admin import PreferencesAdmin
 from secretballot.utils import get_vote_model
 
-from blog.models import Blog, Comment, Redirect, SitePreferences, Tag
+from blog.models import Blog, Comment, Redirect, Series, SitePreferences, Tag
 
 Vote = get_vote_model()
 admin.site.register(Vote)
@@ -68,8 +68,17 @@ class TagsAdmin(admin.ModelAdmin):
     readonly_fields = ["slug"]
 
 
+class SeriesAdmin(admin.ModelAdmin):
+    """Define a custom admin class for the Series model."""
+
+    list_display = ["series_name", "pk", "series_creator"]
+    ordering = (Lower("series_name"),)
+    readonly_fields = ["slug"]
+
+
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Tag, TagsAdmin)
 admin.site.register(Redirect)
+admin.site.register(Series, SeriesAdmin)
 admin.site.register(SitePreferences, PreferencesAdmin)

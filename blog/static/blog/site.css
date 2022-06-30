@@ -896,7 +896,7 @@ body {
   padding-right: 0.5em;
 }
 
-/* adjust all margins on headings etc */
+/* ---------------- adjust/reset all margins on headings etc ---------------- */
 h2,
 h3,
 h4,
@@ -1010,6 +1010,9 @@ input#id_password2 {
   background-color: rgba(250, 250, 210, 0.548);
 }
 
+/* -------------------------------------------------------------------------- */
+/*                           Style the Profile pages                          */
+/* -------------------------------------------------------------------------- */
 .profile_page_wrapper {
   padding: 0 1em;
 }
@@ -1209,8 +1212,9 @@ input#id_password2 {
   padding: 0.5em;
 }
 
-/* edit profile page */
-
+/* -------------------------------------------------------------------------- */
+/*                              edit profile page                             */
+/* -------------------------------------------------------------------------- */
 .profile_edit_wrapper {
   width: 90%;
   margin: 0 auto;
@@ -1266,12 +1270,16 @@ input#id_password2 {
   justify-self: end;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                            Style the TAGS Pages                            */
+/* -------------------------------------------------------------------------- */
 .blog_tags {
   margin-top: 0.5em;
 }
 
 .tags_header,
-.search_header {
+.search_header,
+.series_header {
   display: flex;
   margin-bottom: 0.5em;
   flex-direction: row;
@@ -1350,7 +1358,36 @@ input#id_password2 {
   font-size: 0.9em;
 }
 
-/* Navigation menu for responsive sizes */
+/* -------------------------------------------------------------------------- */
+/*                          Style the 'Series' pages                          */
+/* -------------------------------------------------------------------------- */
+.series_list_container {
+  margin: 1em 0;
+}
+
+.series_list_series {
+  padding: 0.5em 0;
+  font-size: 1.5em;
+  color: var(--sidebar-links);
+}
+
+.series_list_series_link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.series_description {
+  padding: 0 0.5em;
+}
+
+.series_author {
+  font-size: 0.8em;
+  text-align: right;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                    Navigation menu for responsive sizes                    */
+/* -------------------------------------------------------------------------- */
 .nav_toggle {
   position: absolute !important;
   top: -9999px !important;
@@ -1460,6 +1497,11 @@ nav a {
   font-family: "Special Elite", cursive;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                             Responsive Queries                             */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------- MAX 900px ------------------------------- */
 @media screen and (max-width: 900px) {
   .content_container {
     display: block;
@@ -1502,6 +1544,7 @@ nav a {
   }
 }
 
+/* -------------------------------- max 550px ------------------------------- */
 @media screen and (max-width: 550px) {
   .site_container {
     width: 100%;

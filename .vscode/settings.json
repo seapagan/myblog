@@ -53,7 +53,7 @@
   "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "*_test.py"],
   "python.testing.unittestEnabled": false,
   "testExplorer.addToEditorContextMenu": true,
-  "cSpell.words": ["Hashicorp", "Heroku"],
+  "cSpell.words": ["attrib", "Hashicorp", "Heroku"],
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": false,
   "explorer.experimental.fileNesting.patterns": {
@@ -70,5 +70,6 @@
         "goals": ["inform"]
       }
     }
-  ]
+  ],
+  "cSpell.enableFiletypes": ["!css", "!django-html"]
 }

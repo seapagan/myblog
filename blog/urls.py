@@ -1,7 +1,7 @@
 """Define URL patterns for the Blog app."""
 from django.urls import path
 
-from blog.views import blog_views, comment_views, tag_views
+from blog.views import blog_views, comment_views, series_views, tag_views
 
 app_name = "blog"
 urlpatterns = [
@@ -59,5 +59,16 @@ urlpatterns = [
         "tags/",
         tag_views.TagListView.as_view(),
         name="tag_list",
+    ),
+    # Series Views
+    path(
+        "series/<str:slug>",
+        series_views.SeriesDetailView.as_view(),
+        name="series_detail",
+    ),
+    path(
+        "series/",
+        series_views.SeriesListView.as_view(),
+        name="series_list",
     ),
 ]

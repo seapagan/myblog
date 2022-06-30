@@ -3,7 +3,7 @@ from django import template
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from blog.models import Blog, Tag
+from blog.models import Blog, Series, Tag
 
 register = template.Library()
 
@@ -40,6 +40,9 @@ def sidebar():
     context["posts"] = (
         Blog.objects.all().exclude(draft=True).order_by("-created_at")[:6]
     )
+
+    # return all Article Series.
+    context["series"] = Series.objects.all().order_by("-id")[:6]
 
     # Return all Tags.
     # will later most likely restrict tags to the top 20 or so tags sorted by

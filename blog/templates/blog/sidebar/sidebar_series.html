@@ -1,0 +1,15 @@
+<div class="sidebar_article_header"><a class="sidebar_article_header_link"
+    href="{% url 'blog:series_list' %}">Article Series</a>
+</div>
+<div class="sidebar_article_content">
+
+  {% if sb.series %}
+  {% for series in sb.series %}
+  <a href="{% url 'blog:series_detail' series.slug %}"
+    class="sidebar_link">{{ series.series_name|capfirst}}</a>
+  {% endfor %}
+  {% else %}
+  <div class="sidebar_no_content">None Yet!</div>
+  {% endif %}
+
+</div>
